@@ -9,9 +9,8 @@ A full-stack real-time chat application built using **Node.js, Express, MongoDB,
 - 🔐 User Authentication (Register/Login with JWT)
 - 💬 Real-time chat using Socket.IO
 - 💾 Chat history stored in MongoDB
-- 👥 Live user join notifications
+-
 - 📊 Total users & messages count APIs
-- ⚡ Instant message updates
 
 ---
 

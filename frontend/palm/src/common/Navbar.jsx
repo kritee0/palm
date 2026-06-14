@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaAngleDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoReorderThreeOutline } from "react-icons/io5";
+import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
   const items=[
@@ -27,44 +28,51 @@ const Navbar = () => {
   ]
   const clickButton=()=>{
     setIsOpen(!isOpen)
-
-
-
   }
   return (
     <>   
-    <div className='  flex    sm:flex-col md:flex-row  lg:flex-row  max-w-full   border-2  h-64  sm:h-16 md:h-16   bg-amber-50 border-b-gray-400 text-black z-20 justify-between  shrink-0 '>
+    <div className='  flex   items-center  max-w-full     py-2   bg-amber-50  text-black z-20 justify-between  shrink-0 '>
 
       <div>
-        <img src="https://himalayanjava.com/wp-content/uploads/2023/08/java-newlogo.png" alt="png image" className='w-24'/>
+        <img src="https://himalayanjava.com/wp-content/uploads/2023/08/java-newlogo.png" alt="png image" className='w-24 h-auto'/>
       </div>
-        <div className='   hidden md:flex  items-center  justify-center     sm:flex-row   md:flex-row lg:flex-row  px:0 sm:px-0 md:py-0   font-montserrat text-xs sm:text-xs md:text-xs lg:text-xl  gap-5 cursor-pointer '>
+        <div className='   hidden sm:flex  md:flex  items-center  justify-center     sm:flex-row   md:flex-row lg:flex-row  px:0 sm:px-0 md:py-0   font-montserrat text-xs sm:text-xs md:text-xs lg:text-xl  gap-5 cursor-pointer '>
           {
             items.map((item=>(
               
               <div className='flex gap-1   ' >    
                 { item.name}
-                <div className=' hidden sm:flex  items-center'>  
+                <div className='  sm:flex md:flex lg:flex  items-center'>  
                 { item.icon && <item.icon size={16}/>}
                 </div>
                 </div>
                 
+                
             )))
           } 
+          
         </div>
-
-          <div className='flex items-center'>
+        <div className='   flex     items-center'>
               <FaSearch size={16} />
           </div>
-          <div className=' show sm:hidden md:hidden lg:hidden '>
+
+          
+
+          {isOpen?(
+            
+          <RxCross2  size={24} onClick={clickButton}/>
+          ):(
+              <div className=' sm:hidden md:hidden lg:hidden '>
               <IoReorderThreeOutline size={24}  onClick={clickButton} />
           </div>
-    </div>
-      {isOpen   && (
+          )}
+        
+
+           {isOpen   && (
             <>
+            
             <div>
               {
-
                 items.map((item)=>(
                   <div className=' flex'>
                   {item.name}
@@ -74,12 +82,13 @@ const Navbar = () => {
                 </div>
 
                   </div>
-
                 ))
               }
             </div>
             </>
           )}
+    </div>
+     
    
     </>
   )

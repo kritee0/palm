@@ -7,11 +7,15 @@ const Footer = () => {
     <>
     <section>
     <div className='w-full  bg-black ' >
-        <div className='  flex flex-col sm:flex-row md:flex-row lg:flex-row  gap-16 py-8 px-8 h-126 items-center justify-center'>
-      
-        <div className='flex items-center justify-center'>
-            <img src={javafooterlogo} className='object-cover '/>
-        </div>
+      <div className='flex   '>
+       
+       <div className="flex items-center justify-center p-4">
+  <img
+    src={javafooterlogo}
+    className="w-40 h-auto object-contain"
+  />
+</div>
+         <div className='  flex flex-col sm:flex-row md:flex-row lg:flex-row  gap-8 py-8 px-8  justify-center'>   
         <div className='flex flex-col sm  text-white gap-5 '>
         <p className='font-bold'>Contact</p>
         <p className=' font-bold '>HeadOffice:</p>
@@ -36,8 +40,9 @@ const Footer = () => {
             <img src={googlestore} alt="googleplay" className='object-cover w-44'/>
         </div>
          </div>
-         <div className='flex items-center justify-center flex-col'>
-        <div className='flex gap-5 text-red-600 justify-center '>
+           </div>
+         <div className='flex items-center justify-center flex-col border-2 border-e-black'>
+        <div className='flex gap-5 text-red-600 justify-center  '>
             <p>
             Terms and Conditions 
             </p>
@@ -55,6 +60,7 @@ const Footer = () => {
             </div>
           
            
+          
             </div>
 
       

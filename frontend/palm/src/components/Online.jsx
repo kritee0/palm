@@ -5,9 +5,9 @@ import Section from "../common/Section";
 const Online = () => {
   return (
     <Section>
-      <div className="px-16 sm:px-4 sm:py-4 py-2 flex justify-between bg-gray-200 h-96   ">
-        <div className="flex max-w-xs w-full flex-col sm:flex-col  gap-5">
-          <p className="font-bold text-2xl">Buy Online</p>
+      <div className="px-16 sm:px-4 sm:py-4 py-2 flex flex-col  sm:flex-row  md:flex-row justify-between bg-gray-50  gap-36 ">
+        <div className="flex max-w-2xl w-full flex-col sm:flex-col  gap-5">
+          <p className="font-bold text-4xl">Buy Online</p>
           <p>CURATED SELECTION OF COFFEE , DELIVERED TO YOUR DOORSTEP</p>
           <p>
             After we harvest coffee from our farm, our experts process them with
@@ -25,7 +25,7 @@ const Online = () => {
         <div className="">
           <img src={image} alt="image" className="object-cover mx-auto w-96"/>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="hidden sm:flex-row items-center">
           <img src={javacup} alt="javacup" className="object-cover w-44 h-44" />
           <p>Why Java Coffee?</p>
           <p>

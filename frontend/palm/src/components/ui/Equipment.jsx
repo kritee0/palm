@@ -4,8 +4,8 @@ import equipment from "../../assets/equipment.jpg"
 const Equipment = () => {
   return (
     <section>
-    <div className='px-16 sm:px-4  flex flex-col  '>
-      <div className='flex  flex-col sm:flex-row  justify-between   '>
+    <div className='px-16 sm:px-4  flex flex-col '>
+      <div className='flex  flex-col sm:flex-col  justify-between  sm:flex-row  '>
         <img src={equipment} alt="equipment" className='object-cover w-2xl h-full'/>
         <div className='flex flex-col gap-8 '>
         <p className='text-gray-300'>BECAUSE WE LOVE COFFEE</p>

@@ -6,10 +6,11 @@ import Brewing from '../components/Brewing'
 import Online from '../components/Online'
 import Equipment from '../components/ui/Equipment'
 import Roast from '../components/ui/Roast'
-// import Footer from '../components/ui/Footer'
+import Footer from '../components/ui/Footer'
 import Barista from '../components/ui/Barista'
 import Bakery from '../components/ui/Bakery'
 import Comment from '../components/ui/Comment'
+import Location from '../components/ui/Location'
 
 const MainPage = () => {
   return (
@@ -25,7 +26,8 @@ const MainPage = () => {
         <Barista/>
         <Bakery/>
         <Comment/>
-        {/* <Footer/> */}
+       <Location/>
+        <Footer/>
         </>
       
     </div>

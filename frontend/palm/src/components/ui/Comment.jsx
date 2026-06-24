@@ -49,27 +49,29 @@ const Comment = ({heading,smallHeading, star,text}) => {
   ]
   return (
     <>
-    <div className='flex flex-col sm:flex-row'>
-  
-   {comments.map((item,index)=>
-
-   (
-    <div className='flex  flex-col sm:flex-row items-center justify-center'>
-      <div  key={index}className={index ===activeIndex?"scale-110 opacity-100  flex items-center  overflow-hidden transition-transform duration-300 ":"scale-90 opacity-10 overflow-hidden"}>
-        <CommentUi heading ={comments[activeIndex].heading}
-        smallHeading={comments[activeIndex].smallHeading}  star={comments[activeIndex].star}
-        text={comments[activeIndex].text}
-
-/>
-       
+   <div className="overflow-hidden w-full">
+  <div
+    className="flex transition-transform duration-500"
+    style={{
+      transform: `translateX(-${activeIndex * 100}%)`
+    }}
+  >
+    {comments.map((item, index) => (
+      <div
+        key={index}
+        className="min-w-full flex justify-center"
+      >
+        <CommentUi
+          heading={item.heading}
+          smallHeading={item.smallHeading}
+          star={item.star}
+          text={item.text}
+        />
       </div>
-
-    </div>
-
-    
-  ) )
-}
+    ))}
+  </div>
 </div>
+
      <div className='flex items-center justify-center mt-16'>
        <Circle next={next}/>
     </div>

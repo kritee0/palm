@@ -3,32 +3,45 @@ import { FaAngleDown } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import Search from '../components/ui/Search';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen,setIsOpen]=useState(false)
+  const[openSearch,setIsOpenSearch]=useState(false)
   const items=[
     {
-      name:"Home"
+      name:"Home" ,path:"/"
     },
     {
-      name:"About Us"
-    },
+      name:"About ", path:
+'/about'    },
     {
-      name:"Service", icon:FaAngleDown
+      name:"Service", path:"/service", icon:FaAngleDown
     },{
-      name:"Location", icon:FaAngleDown
+      name:"Location", 
+      path:"/location",  icon:FaAngleDown
     },{
-      name:"Francies"
+      name:"Francies", path:"/francies"
     },{
-      name:"Loyality app"
+      name:"Loyality app" ,path:"/loyalityapp"
     },{
-      name:"Career At Java"
+      name:"Career At Java" ,path:"/career"
     },{
-      name:"Express", icon:FaAngleDown
+      name:"Express"    , path:"/express", icon:FaAngleDown 
     }
   ]
   const clickButton=()=>{
-    setIsOpen(!isOpen)
+    setIsOpen(prev=>!prev)
   }
+
+  const openModal=()=>{
+    setIsOpenSearch(prev=>!prev)
+
+  }
+  
+    const cross=()=>{
+       setIsOpenSearch(false)
+    }
   return (
     <>   
     <div className='  flex   items-center  max-w-full     py-2   bg-amber-50  text-black z-20 justify-between  shrink-0 '>
@@ -40,20 +53,26 @@ const Navbar = () => {
           {
             items.map((item=>(
               
-              <div className='flex gap-1   ' >    
-                { item.name}
+              
+              <div   key=  
+                { item.name}  className='flex gap-1   ' >  
+              <Link
+                to={item.path } >
                 <div className='  sm:flex md:flex lg:flex  items-center'>  
+                  {item.name}
                 { item.icon && <item.icon size={16}/>}
                 </div>
+                </Link>
                 </div>
+
                 
                 
             )))
           } 
           
         </div>
-        <div className='   flex     items-center'>
-              <FaSearch size={16} />
+        <div className='   flex     items-center' >
+              <FaSearch size={16}  onClick={openModal} className='cursor-pointer'/>
           </div>
 
           
@@ -88,6 +107,12 @@ const Navbar = () => {
             </>
           )}
     </div>
+    {openSearch && (
+     <div>
+      <Search cross={cross}/>
+
+     </div>
+    )}
      
    
     </>
